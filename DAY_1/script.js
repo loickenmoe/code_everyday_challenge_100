@@ -1,15 +1,15 @@
-const containerImages = document.querySelectorAll(".container-image")
+const panels = document.querySelectorAll(".panel")
 
-containerImages.forEach(containerImage => {
-    containerImage.addEventListener('click', () => {
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
         removeActiveClasses()
-        containerImage.classList.add('active')
+        panel.classList.add('active')
     } )
 
 })
 
 function removeActiveClasses() {
-    containerImages.forEach(containerImage => {
-        containerImage.classList.remove('active')
+    panels.forEach(panel => {
+        panel.classList.remove('active')
     })
 }

@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 * {
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Muli", sans-serif;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,49 +20,46 @@ body {
     display: flex;
 }
 
-.container-image {
+.panel {
     position: relative;
-    height: 90vh;
-    width: 5rem;
+    height: 80vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto 100%;
     color: #fff;
-    border-radius: 20px;
+    border-radius: 50px;
     cursor: pointer;
     flex: 0.5;
     transition: flex 0.7s ease-in;
+    margin: 10px;
 }
 
-.container-image h3 {
+.panel h3 {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    font-size: 2rem;
-    visibility: hidden;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+    opacity: 0;
     margin: 0;
 }
-.container-image.active{
+
+.panel.active {
     flex: 5;
 }
-.container-image.active h3{
-    visibility: visible;
+
+.panel.active h3 {
+    opacity: 1;
     transition: visibility 0.3s ease-in 0.4s;
 }
 
 /* media screen */
-@media (max-width: 500px) {
-    .container{
+@media (max-width: 480px) {
+    .container {
         width: 100vw;
-        justify-content: center;
-    }
-   
-    .container-image:nth-child(4),
-    .container-image:nth-child(5){
-        display: none;
     }
 
-.container-image h3 {
-    font-size: 1.3rem;
-}
+    .panel:nth-child(4),
+    .panel:nth-child(5) {
+        display: none;
+    }
 }
