@@ -1,47 +1,45 @@
-const progress = document.getElementById("progress")
-const circles = document.querySelectorAll(".circle")
-const prev = document.getElementById("prev")
-const next = document.getElementById("next")
+const progress = document.getElementById("progress");
+const circles = document.querySelectorAll(".circle");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
 
 let currrentActive = 1;
 
 next.addEventListener("click", () => {
   currrentActive++;
   if (currrentActive > circles.length) {
-    currrentActive = circles.length
+    currrentActive = circles.length;
   }
-  update()
-})
-
+  update();
+});
 
 prev.addEventListener("click", () => {
   currrentActive--;
   if (currrentActive < 1) {
-    currrentActive = 1
+    currrentActive = 1;
   }
-  update()
-})
-
-
+  update();
+});
 
 function update() {
   circles.forEach((circle, idx) => {
     if (idx < currrentActive) {
-      circle.classList.add("active")
+      circle.classList.add("active");
     } else {
-      circle.classList.remove("active")
+      circle.classList.remove("active");
     }
-  })
+  });
 
   const actives = document.querySelectorAll(".active");
-  progress.style.width = (actives.length - 1 )/ (circles.length - 1) * 100 + '%'
+  progress.style.width =
+    ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
 
-  if(currrentActive === 1 ){
-    prev.disabled = true
-  }else if (currrentActive === circles.length) {
-    next.disabled = true
+  if (currrentActive === 1) {
+    prev.disabled = true;
+  } else if (currrentActive === circles.length) {
+    next.disabled = true;
   } else {
-    prev.disabled = false
-    next.disabled = false
+    prev.disabled = false;
+    next.disabled = false;
   }
 }
