@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+:root{
+    --line-border-fill:#3498db;
+    --line-border-empty:#e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.subContainer {
+    position: relative;
+    width: 400px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.progress::before{
+    color: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: var(--line-border-empty);
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    transform: translateY(-50%);
+    transition: 0.4s ease;
+}
+.progress {
+    position: absolute;
+    height: 4px;
+    width: 0%;
+    background-color: var(--line-border-fill);
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    transform: translateY(-50%);
+    transition: 0.4s ease;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #999;
+    border: 2px solid var(--line-border-empty);
+    border-radius: 50%;
+    transition: 0.4s ease;
+}
+
+.circle.active {
+    border-color: var(--line-border-fill);
+}
+
+.btn {
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--line-border-fill);
+    color: #fff;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+}
