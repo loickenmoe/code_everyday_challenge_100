@@ -1,31 +1,21 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var counterElement = document.getElementById('counter');
-    var loader = document.getElementById('loader');
-    var content = document.getElementById('content');
-    var count = 0;
-    var interval;
+const loadeText = document.querySelector(".loading-text");
+const bg = document.querySelector(".bg");
 
-    // Créer une nouvelle image pour charger le background-image
-    var image = new Image();
-    image.src = 'welding_man.jpg'; // Remplacez par l'URL de votre image
+let load = 0;
+let int = setInterval(blurring, 30);
 
-    // Attendre que l'image soit chargée avant de démarrer le compteur
-    image.onload = function() {
-        // Afficher l'image de fond et commencer le compteur
-        content.style.display = 'flex';
-        startCounter();
-    };
+function blurring() {
+  load++
 
-    // Fonction pour démarrer le compteur
-    function startCounter() {
-        interval = setInterval(function() {
-            counterElement.textContent = count + '%';
-            count++;
-            if (count > 100) {
-                clearInterval(interval);
-                loader.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Rétablit le défilement
-            }
-        }, 30); // Augmente le compteur de 1% toutes les 30ms
-    }
-});
+  if (load > 99) {
+    clearInterval(int);
+  }
+
+  loadeText.innerText = `${load}%`;
+  loadeText.style.opacity = scale(load, 0, 100, 1, 0);
+  bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
+}
+
+const scale = (num, in_min, in_max, out_min, out_max) => {
+  return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+};
