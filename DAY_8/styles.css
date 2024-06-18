@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+:root {
+    --light: #fff;
+    --bodyColor: #6c85f5;
+    --focusColor: #add8e6;
+    --containerColor: #0e052ed2;
+    --linkContainerColor: #f0a28f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: var(--bodyColor);
+}
+
+.container {
+    padding: 20px;
+    background-color: var(--containerColor);
+    color: var(--light);
+    border-radius: 20px;
+}
+
+h1 {
+    margin: 0 0 2rem 0;
+    text-align: center;
+}
+
+.container form {
+    width: 350px;
+}
+
+form .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3rem;
+    position: relative;
+}
+
+form input {
+    width: 100%;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--light);
+    font-size: inherit;
+    color: var(--light);
+}
+
+form input:focus,
+form input:valid {
+    outline: none;
+    border-bottom-color: var(--focusColor);
+}
+
+form input:focus+label span,
+form input:valid+label span {
+    color: var(--focusColor);
+    transform: translateY(-30px);
+}
+
+form label {
+    position: absolute;
+    left: 0%;
+    top: 20%;
+}
+
+form label span {
+    display: inline-block;
+    font-size: 16px;
+    min-width: 7px;
+    transition: 0.3s linear;
+}
+
+form button {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: var(--focusColor);
+}
+
+.container a {
+    text-decoration: none;
+    color: var(--linkContainerColor);
+    font-weight: bold;
+}
+
+.container a:hover {
+    color: var(--bodyColor);
+}
+
+@media (max-width:400px) {
+
+    body {
+        padding: 0 3px;
+    }
+
+    .container form {
+        width: 300px;
+    }
+}
+
+@media (max-width:320px) {
+
+    .container form {
+        width: 250px;
+    }
+}
