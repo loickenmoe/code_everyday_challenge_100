@@ -1,24 +1,20 @@
-const button = document.querySelector(".btn");
-const textContainer = document.getElementById("textChange");
+const jokeEl = document.getElementById("joke");
+const jokeBtn = document.getElementById("jokeBtn");
 
-// URL de l'API
-const apiUrl = "https://icanhazdadjoke.com/";
+jokeBtn.addEventListener("click", generateJoke);
 
-// Fonction pour récupérer et afficher les données de l'API
-const fetchData = async () => {
-  try {
-    const response = await fetch(apiUrl, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-      },
+generateJoke();
+
+function generateJoke() {
+  const config = {
+    headers: {
+      Accept: "application/json",
+    },
+  };
+
+  fetch("https://icanhazdadjoke.com/", config)
+    .then((res) => res.json())
+    .then((data) => {
+      jokeEl.innerHTML = data.joke;
     });
-    if (!response.ok) {
-      throw new Error("Erreur lors de la récupération des données");
-    }
-    const res = await response.json();
-    textContainer.innerText = res.joke;
-  } catch (error) {
-    textContainer.innerText = `<p>${error.message}</p>`;
-  }
-};
+}
