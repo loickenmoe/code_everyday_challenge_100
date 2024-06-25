@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
-:root{
-    --light:#fff;
-    --primaryColor:#e0dcd6;
-    --borderColor:#b8b4b0;
+:root {
+    --light: #fff;
+    --primaryColor: #e0dcd6;
+    --borderColor: #b8b4b0;
 }
 
 * {
@@ -11,55 +11,104 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    margin: 0;
-    background-color: var(--primaryColor);
+    font-family: "Muli", sans-serif;
+    background-color: #f0f0f0;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 50px 0 30px;
 }
 
-.box {
-    padding: 20px;
-    margin: 1rem 0;
-    background-color: var(--primaryColor);
-    border: 2px solid var(--borderColor);
+.faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq {
+    background-color: transparent;
+    border: 1px solid #9fa4a8;
     border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
 }
 
-.box .show {
-    display: flex;
-    justify-content: space-between;
+
+.faq.active {
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-.box .show p {
-    font-size: 20px;
-    margin-top: 0;
+.faq.active::before,
+.faq.active::after {
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 7rem;
+    color: #2ecc71;
+    position: absolute;
+    opacity: 0.2;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
 }
 
-.box button {
-    width: 35px;
-    height: 25px;
-    font-size: 18px;
+.faq.active::before {
+    color: #3498db;
+    top: -10px;
+    left: -30px;
+    transform: rotateY('180deg');
+}
+
+.faq-title {
+    margin: 0 35px 0 0;
+}
+
+.faq-text {
+    display: none;
+    margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+    display: block;
+}
+
+.faq-toggle {
+    background-color: transparent;
     border: 0;
-    background-color: var(--primaryColor);
-}
-
-.fa-xmark {
-    padding: 2px 5px;
-    color: var(--light);
-    background-color: var(--borderColor);
     border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+}
+
+.faq-toggle:focus {
+    outline: 0;
+}
+
+.faq-toggle .fa-xmark {
     display: none;
 }
 
-.box .hidden {
+.faq.active .faq-toggle .fa-xmark {
+    display: block;
+    color: #fff;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
     display: none;
+}
+
+.faq.active .faq-toggle {
+    background-color: #9fa4a8;
 }

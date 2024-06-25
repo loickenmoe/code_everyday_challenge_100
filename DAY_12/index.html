@@ -7,70 +7,67 @@
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/183b574aee.js" crossorigin="anonymous"></script>
     <!-- title -->
-    <title>Questions Answers</title>
+    <title>FAQ</title>
     <!-- style -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Frequently Asked Questions</h1>
+    <h1>Frequently Asked Questions</h1>
 
-        <div class="box">
-            <div class="show">
-                <p>Why shouldn't we trust atoms ?</p>
-                <button onclick="openCard(0)">
-                    <i class="fa-solid fa-chevron-down"></i>
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="hidden">They make up everything.</div>
+    <div class="faq-container">
+        <div class="faq active">
+            <h3 class="faq-title">Why shouldn't we trust atoms ?</h3>
+            <p class="faq-text">They make up everything.</p>
+            <button class="faq-toggle">
+                <i class="fa-solid fa-chevron-down"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
+    </div>
 
-        <div class="box">
-            <div class="show">
-                <p>What do you call someone with no body and no nose ?</p>
-                <button onclick="openCard(1)">
-                    <i class="fa-solid fa-chevron-down"></i>
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="hidden">Nobody knows.</div>
+    <div class="faq-container">
+        <div class="faq">
+            <h3 class="faq-title">What do you call someone with no body and no nose ?</h3>
+            <p class="faq-text">Nobody knows.</p>
+            <button class="faq-toggle">
+                <i class="fa-solid fa-chevron-down"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
+    </div>
 
-        <div class="box">
-            <div class="show">
-                <p>What's the object-oriented way to become wealthy ?</p>
-                <button onclick="openCard(2)">
-                    <i class="fa-solid fa-chevron-down"></i>
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="hidden">Inheritance.</div>
+    <div class="faq-container">
+        <div class="faq">
+            <h3 class="faq-title">What's the object-oriented way to become wealthy ?</h3>
+            <p class="faq-text">Inheritance.</p>
+            <button class="faq-toggle">
+                <i class="fa-solid fa-chevron-down"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
+    </div>
 
-        <div class="box">
-            <div class="show">
-                <p>How many tickles does it take to tickle on octopus ?</p>
-                <button onclick="openCard(3)">
-                    <i class="fa-solid fa-chevron-down"></i>
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="hidden">Ten-tickles !</div>
+    <div class="faq-container">
+        <div class="faq">
+            <h3 class="faq-title">How many tickles does it take to tickle on octopus ?</h3>
+            <p class="faq-text">Ten-tickles !</p>
+            <button class="faq-toggle">
+                <i class="fa-solid fa-chevron-down"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
+    </div>
 
-        <div class="box">
-            <div class="show">
-                <p>What is : 1 + 1 ?</p>
-                <button onclick="openCard(4)">
-                    <i class="fa-solid fa-chevron-down"></i>
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="hidden">Depends on who are you asking.</div>
+    <div class="faq-container">
+        <div class="faq">
+            <h3 class="faq-title">What is : 1 + 1 ?</h3>
+            <p class="faq-text">Depends on who are you asking.</p>
+            <button class="faq-toggle">
+                <i class="fa-solid fa-chevron-down"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
-
     </div>
 
     <script src="script.js"></script>
